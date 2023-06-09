@@ -33,6 +33,12 @@ namespace ProductReviewManagement
                 new ProductReview() {ProductID = 24, UserID =24, Rating=1.8, Review="Bad", IsLike = false},
                 new ProductReview() {ProductID = 25, UserID =25, Rating=3.4, Review="Good", IsLike = true}
             };
+
+            foreach (var data in productReviews)
+            {
+                Console.WriteLine($"ProductID:- {data.ProductID} \t UserID:- {data.UserID} \t Rating:- {data.Rating} " +
+                    $"\t Review:- {data.Review} IsLike:- {data.IsLike}");
+            }
         }
     }
 }
