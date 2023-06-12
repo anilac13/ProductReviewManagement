@@ -35,7 +35,15 @@ namespace ProductReviewManagement
 
             foreach (var data in result)
             {
-                Console.WriteLine($"ProductID: {data.ProductID} \t UserID: {data.UserID} \t Rating:- {data.Rating} \t Review:- {data.Review} \t Islike:- {data.IsLike}");
+                Console.WriteLine($"ProductID:- {data.ProductID} \t UserID:- {data.UserID} \t Rating:- {data.Rating} \t Review:- {data.Review} \t Islike:- {data.IsLike}");
+            }
+        }
+        public void CountOfRecords(List<ProductReview> review)
+        {
+            var result = review.GroupBy(a => a.ProductID).Select(a => new { ProductID = a.Key, Count = a.Count() });
+            foreach (var data in result)
+            {
+                Console.WriteLine($"ProductID:- {data.ProductID} \t Count:- {data.Count}");
             }
         }
     }
