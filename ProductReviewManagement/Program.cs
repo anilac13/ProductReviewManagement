@@ -10,7 +10,7 @@ namespace ProductReviewManagement
             bool flag = true;
             while (flag)
             {
-                Console.WriteLine("\nChoose option to perform \n1.Insert 25 Records \n2.Retrieve top 3 records \n3.Exit");
+                Console.WriteLine("\nChoose option to perform \n1.Insert 25 Records \n2.Retrieve top 3 records \n3.Retrieve records whose rating is > 3 \n4.Exit");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
@@ -23,7 +23,7 @@ namespace ProductReviewManagement
                         productReviews.Add(new ProductReview {ProductID = 6, UserID =6, Rating=3.8, Review="Good", IsLike = true});
                         productReviews.Add(new ProductReview {ProductID = 7, UserID =7, Rating=4.0, Review="Excellent",IsLike = false});
                         productReviews.Add(new ProductReview {ProductID = 8, UserID =8, Rating=4.5, Review="Awesome", IsLike = true});
-                        productReviews.Add(new ProductReview {ProductID = 9, UserID =9, Rating=2.7, Review="Bad", IsLike = true});
+                        productReviews.Add(new ProductReview {ProductID = 9, UserID =9, Rating=3.8, Review="Bad", IsLike = true});
                         productReviews.Add(new ProductReview {ProductID = 10, UserID =10, Rating=3.7, Review="Good", IsLike = true});
                         productReviews.Add(new ProductReview {ProductID = 11, UserID =11, Rating=2.0, Review="Bad",IsLike=false});
                         productReviews.Add(new ProductReview {ProductID = 12, UserID =12, Rating=3.0, Review="Fine",IsLike = true});
@@ -50,11 +50,13 @@ namespace ProductReviewManagement
                         productManagement.TopRecords(productReviews);
                         break;
                     case 3:
+                        productManagement.SelectedRecords(productReviews);
+                        break;
+                    case 4:
                         flag = false;
                         break;
                 }
             }
-            
         }
     }
 }

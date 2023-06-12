@@ -20,5 +20,23 @@ namespace ProductReviewManagement
                     $"\t Review:- {data.Review} \t IsLike:- {data.IsLike}");
             }
         }
+        public void SelectedRecords(List<ProductReview> review)
+        {
+            var result = (from productReview in review
+                          where (productReview.ProductID == 1 || productReview.ProductID == 4 || productReview.ProductID == 9)
+                          && productReview.Rating > 3
+                          select productReview);
+
+            /*var result = (from productReview in review
+                          where productReview.ProductID == 1 && productReview.Rating > 3 
+                          || productReview.ProductID == 4 && productReview.Rating > 3 
+                          || productReview.ProductID == 9 && productReview.Rating > 3
+                          select productReview);*/
+
+            foreach (var data in result)
+            {
+                Console.WriteLine($"ProductID: {data.ProductID} \t UserID: {data.UserID} \t Rating:- {data.Rating} \t Review:- {data.Review} \t Islike:- {data.IsLike}");
+            }
+        }
     }
 }
