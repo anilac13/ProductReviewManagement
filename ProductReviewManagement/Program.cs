@@ -10,7 +10,8 @@ namespace ProductReviewManagement
             bool flag = true;
             while (flag)
             {
-                Console.WriteLine("\nChoose option to perform \n1.Insert 25 Records \n2.Retrieve top 3 records \n3.Retrieve records whose rating is > 3 \n4.Retrieve Count of review \n5.Exit");
+                Console.WriteLine("\nChoose option to perform \n1.Insert 25 Records \n2.Retrieve top 3 records \n3.Retrieve records whose rating is > 3 \n4.Retrieve Count of review " +
+                    "\n5.Retrieve ProductID and Review \n6.Exit");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
@@ -56,6 +57,9 @@ namespace ProductReviewManagement
                         productManagement.CountOfRecords(productReviews);
                         break;
                     case 5:
+                        productManagement.RetrieveIDAndReview(productReviews);
+                        break;
+                    case 6:
                         flag = false;
                         break;
                 }
