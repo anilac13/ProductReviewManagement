@@ -11,7 +11,7 @@ namespace ProductReviewManagement
             while (flag)
             {
                 Console.WriteLine("\nChoose option to perform \n1.Insert 25 Records \n2.Retrieve top 3 records \n3.Retrieve records whose rating is > 3 \n4.Retrieve Count of review " +
-                    "\n5.Retrieve ProductID and Review \n6.Exit");
+                    "\n5.Retrieve ProductID and Review \n6.Skip top 5 records \n7.Exit");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
@@ -60,6 +60,9 @@ namespace ProductReviewManagement
                         productManagement.RetrieveIDAndReview(productReviews);
                         break;
                     case 6:
+                        productManagement.SkipTop5Records(productReviews);
+                        break;
+                    case 7:
                         flag = false;
                         break;
                 }
